@@ -51,10 +51,13 @@ namespace Lab4_poo_camila
         {
             if (Memoria == 100000)
             {
+                EstadoMaquinaRecepcion = "Encendida";
                 Memoria = 0;
-                //piezasRecibidas = piezas_almacenamiento;
-
-            
+                Console.WriteLine("Maquina Reiniciada");
+            }
+            else
+            {
+                Console.WriteLine(" ");
             }
 
         }

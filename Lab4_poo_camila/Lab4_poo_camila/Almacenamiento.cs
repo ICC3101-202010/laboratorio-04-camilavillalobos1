@@ -50,8 +50,14 @@ namespace Lab4_poo_camila
             if (Memoria == 50000)
             {
                 Memoria = 0;
-                PiezasAlmacenadas = Piezas_Ensamblaje;
+                EstadoMaquinaAlmacenamiento = "Encendida";
+                Console.WriteLine("Maquina Reiniciada");
 
+
+            }
+            else
+            {
+                Console.WriteLine(" ");
             }
         }
     }

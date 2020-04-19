@@ -5,9 +5,11 @@ namespace Lab4_poo_camila
     class Program
 
     {
-        
+        private static int i;
+
         public static void Main(string[] args)
         {
+            
             var rnd = new Random();
             Recepcion recepcion1 = new Recepcion();
             Almacenamiento almacenamiento1 = new Almacenamiento();
@@ -16,24 +18,55 @@ namespace Lab4_poo_camila
             Empaque empaque1 = new Empaque();
 
 
-            recepcion1.Encender();
-            almacenamiento1.Encender();
-            ensamblaje1.Encender();
-            verificacion1.Encender();
-            empaque1.Encender();
+            int x = 0;
 
-            //recepcion1.piezasRecibidas = rnd.Next(1, 50000);
-            recepcion1.piezas_Almacenamiento(recepcion1);
-            almacenamiento1.PiezasRecibidas = recepcion1.piezas_almacenamiento;
-            almacenamiento1.AlmacenarPiezas(almacenamiento1);
-            ensamblaje1.PiezasAlmacenadas = almacenamiento1.Piezas_Ensamblaje;
-            ensamblaje1.Ensamblar_Piezas(ensamblaje1);
-            verificacion1.PiezasEnsambladas = ensamblaje1.Piezas_Verificacion;
-            verificacion1.Verificacion_Calidad(verificacion1);
-            empaque1.PiezasVerificadas = verificacion1.Piezas_Empaque;
-            empaque1.Empaquetado(empaque1);
+            while (x<24)
+            {
+                x+=1;
 
-            Console.WriteLine("Hello World!");
+                if (x >= 6)
+                {
+                    Console.WriteLine("Hora: " + x);
+                    recepcion1.Encender();
+                    almacenamiento1.Encender();
+
+                    ensamblaje1.Encender();
+                    verificacion1.Encender();
+                    empaque1.Encender();
+
+                    //recepcion1.piezasRecibidas = rnd.Next(1, 50000);
+                    recepcion1.piezas_Almacenamiento(recepcion1);
+                    almacenamiento1.PiezasRecibidas = recepcion1.piezas_almacenamiento;
+                    almacenamiento1.AlmacenarPiezas(almacenamiento1);
+                    ensamblaje1.PiezasAlmacenadas = almacenamiento1.Piezas_Ensamblaje;
+                    ensamblaje1.Ensamblar_Piezas(ensamblaje1);
+                    verificacion1.PiezasEnsambladas = ensamblaje1.Piezas_Verificacion;
+                    verificacion1.Verificacion_Calidad(verificacion1);
+                    empaque1.PiezasVerificadas = verificacion1.Piezas_Empaque;
+                    empaque1.Empaquetado(empaque1);
+
+                    recepcion1.Reiniciar();
+                    almacenamiento1.Reiniciar();
+                    ensamblaje1.Reiniciar();
+                    verificacion1.Reiniciar();
+                    empaque1.Reiniciar();
+                }
+
+                else if (x>21)
+                {
+                    recepcion1.Apagar();
+                    almacenamiento1.Apagar();
+                    ensamblaje1.Apagar();
+                    verificacion1.Apagar();
+                    empaque1.Apagar();
+                    break;
+                }
+
+            }   
+
+
+                
+            
         }
     }
 }

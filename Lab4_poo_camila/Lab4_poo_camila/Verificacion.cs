@@ -16,9 +16,10 @@ namespace Lab4_poo_camila
             {
                 if (verificacion.Memoria < 10000)
                 {
-                    verificacion.PiezasEnsambladas = verificacion.PiezasVerificadas;
+                    verificacion.PiezasVerificadas = verificacion.PiezasEnsambladas;
                     verificacion.Memoria += verificacion.PiezasVerificadas;
-                    PiezasVerificadas = Piezas_Empaque;
+                    PiezasVerificadas += Piezas_Empaque;
+                    Piezas_Empaque = PiezasVerificadas;
                     Console.WriteLine(" ");
                     Console.WriteLine(PiezasEnsambladas);
                     Console.WriteLine("Piezas verificadas: " + PiezasVerificadas);
@@ -49,6 +50,12 @@ namespace Lab4_poo_camila
             if (Memoria == 10000)
             {
                 Memoria = 0;
+                EstadoMaquinaVerificadora = "Encendida";
+                Console.WriteLine("Maquina Reiniciada");
+            }
+            else
+            {
+                Console.WriteLine(" ");
             }
         }
     }
