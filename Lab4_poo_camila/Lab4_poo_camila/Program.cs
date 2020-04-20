@@ -5,7 +5,6 @@ namespace Lab4_poo_camila
     class Program
 
     {
-        
 
         public static void Main(string[] args)
         {
@@ -19,20 +18,27 @@ namespace Lab4_poo_camila
 
 
 
+            recepcion1.Encender();
+            almacenamiento1.Encender();
+            ensamblaje1.Encender();
+            verificacion1.Encender();
+            empaque1.Encender();
 
-            for (int x = 0; x <= 24;  x+=1 )
+            for (int x = 0; x <= 22;  x+=1 )
             {
-                
-
-                if ( x >= 6)
+                if (x == 6)
                 {
-                    Console.WriteLine("Hora: " + x);
                     recepcion1.Encender();
                     almacenamiento1.Encender();
-
                     ensamblaje1.Encender();
                     verificacion1.Encender();
                     empaque1.Encender();
+                }
+
+                else if ( x >= 6)
+                {
+                    Console.WriteLine("Hora: " + x);
+
 
                     //recepcion1.piezasRecibidas = rnd.Next(1, 50000);
                     recepcion1.piezas_Almacenamiento(recepcion1);
@@ -46,28 +52,31 @@ namespace Lab4_poo_camila
                     empaque1.Empaquetado(empaque1);
 
                     Console.WriteLine("Revisando maquinas ...");
+                    Console.WriteLine("  ");
+
                     recepcion1.Reiniciar();
                     almacenamiento1.Reiniciar();
                     ensamblaje1.Reiniciar();
                     verificacion1.Reiniciar();
                     empaque1.Reiniciar();
                 }
-
-                else if (x>21)
+                else if (x == 22)
                 {
                     recepcion1.Apagar();
                     almacenamiento1.Apagar();
                     ensamblaje1.Apagar();
                     verificacion1.Apagar();
                     empaque1.Apagar();
-                    break;
                 }
 
-            }   
+
+            }
 
 
-                
-            
+
+
+
+
         }
     }
 }

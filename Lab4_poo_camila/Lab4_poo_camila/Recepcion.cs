@@ -1,19 +1,15 @@
 ﻿using System;
 namespace Lab4_poo_camila
 {
-    public class Recepcion : IComputadorCentral
+    public class Recepcion : Computador_Central
     {
         public const int piezasRecibidas = 60000;
-        //public int piezasRecibidas;
         public int piezas_almacenamiento;
-        int Memoria;
-        public string EstadoMaquinaRecepcion;
-
 
         public void piezas_Almacenamiento(Recepcion recepcion)
         {
             
-            if (EstadoMaquinaRecepcion == "Encendida")
+            if (Estado == "Encendida")
             {
                 if (recepcion.Memoria < 100000)
                 {
@@ -26,10 +22,11 @@ namespace Lab4_poo_camila
                     Console.WriteLine("Piezas recibidas: " + piezasRecibidas);
                     Console.WriteLine("Piezas que se van al almacenamiento: " + piezas_almacenamiento);
                 }
+
                 else
                 {
                     Console.WriteLine("Error Recepcion");
-                    recepcion.Reiniciar();
+                    
                 }
 
             }
@@ -38,34 +35,6 @@ namespace Lab4_poo_camila
                 Console.WriteLine(" ");
 
                 Console.WriteLine("No funciona");
-            }
-        }
-
-        public void Encender()
-        {
-            Console.WriteLine("Maquina Recepcion Encendida");
-            EstadoMaquinaRecepcion = "Encendida";
-            Memoria = 0;
-        }
-
-        public void Apagar()
-        {
-            Console.WriteLine("Maquina Apagada");
-            EstadoMaquinaRecepcion = "Apagada";
-
-        }
-
-        public void Reiniciar()
-        {
-            if (Memoria == 100000)
-            {
-                EstadoMaquinaRecepcion = "Encendida";
-                Memoria = 0;
-                Console.WriteLine("Maquina Recepcion Reiniciada");
-            }
-            else
-            {
-                Console.WriteLine(" ");
             }
 
         }

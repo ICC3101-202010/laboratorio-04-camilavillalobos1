@@ -1,19 +1,17 @@
 ﻿using System;
 namespace Lab4_poo_camila
 {
-    public class Almacenamiento : IComputadorCentral
+    public class Almacenamiento : Computador_Central
     {
         public int PiezasRecibidas;
         public int PiezasAlmacenadas;
         public int Piezas_Ensamblaje;
-        int Memoria;
-        string EstadoMaquinaAlmacenamiento;
 
 
         public void AlmacenarPiezas(Almacenamiento almacenamiento)
 
         {
-            if (EstadoMaquinaAlmacenamiento == "Encendida")
+            if (Estado == "Encendida")
             {
                 if (almacenamiento.Memoria < 50000)
                 {
@@ -33,40 +31,13 @@ namespace Lab4_poo_camila
                 {
                     Console.WriteLine(" ");
                     Console.WriteLine("Error Almacenamiento");
-                    almacenamiento.Reiniciar();
+                   
                 }
             }
 
-        }
-
-        public void Encender()
-        {
-            Console.WriteLine("Maquina Almacenamiento Encendida");
-            EstadoMaquinaAlmacenamiento = "Encendida";
-            Memoria = 0;
-        }
-
-        public void Apagar()
-        {
-            Console.WriteLine("Maquina Apagada");
-            EstadoMaquinaAlmacenamiento = "Apagada";
-        }
-
-        public void Reiniciar()
-        {
-            if (Memoria == 50000)
-            {
-                
-                EstadoMaquinaAlmacenamiento = "Encendida";
-                Memoria = 0;
-                Console.WriteLine("Maquina Almacenamiento Reiniciada");
+        
 
 
-            }
-            else
-            {
-                Console.WriteLine(" ");
-            }
         }
     }
 }

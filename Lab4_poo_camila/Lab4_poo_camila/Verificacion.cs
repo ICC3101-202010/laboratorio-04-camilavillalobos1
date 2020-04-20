@@ -1,18 +1,15 @@
 ﻿using System;
 namespace Lab4_poo_camila
 {
-    public class Verificacion : IComputadorCentral
+    public class Verificacion : Computador_Central
     {
         public int PiezasVerificadas;
         public int PiezasEnsambladas;
         public int Piezas_Empaque;
-        string EstadoMaquinaVerificadora;
-        int Memoria;
-
 
         public void Verificacion_Calidad( Verificacion verificacion)
         {
-            if (EstadoMaquinaVerificadora == "Encendida")
+            if (Estado == "Encendida")
             {
                 if (verificacion.Memoria < 100000)
                 {
@@ -34,37 +31,12 @@ namespace Lab4_poo_camila
                 {
                     Console.WriteLine(" ");
                     Console.WriteLine("No se pudo verificar");
-                    verificacion.Reiniciar();
                     Memoria = 0;
                 }
             }
-        }
+        
 
-        public void Encender()
-        {
-            Console.WriteLine("Maquina Verificadora Encendida");
-            EstadoMaquinaVerificadora = "Encendida";
-        }
-
-        public void Apagar()
-        {
-            Console.WriteLine("Maquina Verificadora Apagada");
-            EstadoMaquinaVerificadora = "Apagada";
-        }
-
-        public void Reiniciar()
-        {
-            if (Memoria == 100000)
-            {
-                
-                EstadoMaquinaVerificadora = "Encendida";
-                Memoria = 0;
-                Console.WriteLine("Maquina Verificadora Reiniciada");
-            }
-            else
-            {
-                Console.WriteLine(" ");
-            }
+ 
         }
     }
 }

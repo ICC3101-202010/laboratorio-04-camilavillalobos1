@@ -38,6 +38,7 @@
     <Compile Include="Verificacion.cs" />
     <Compile Include="Empaque.cs" />
     <Compile Include="IComputadorCentral.cs" />
+    <Compile Include="Computador Central.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

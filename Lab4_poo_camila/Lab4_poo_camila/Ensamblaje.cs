@@ -1,18 +1,15 @@
 ﻿using System;
 namespace Lab4_poo_camila
 {
-    public class Ensamblaje : IComputadorCentral
+    public class Ensamblaje : Computador_Central
     {
         public int Piezas_Verificacion;
         public int PiezasAlmacenadas;
         public int PiezasEnsambladas;
-        string EstadoMaquinaEnsamblaje;
-        int Memoria;
-
 
         public void Ensamblar_Piezas(Ensamblaje ensamblaje)
         {
-            if (EstadoMaquinaEnsamblaje == "Encendida")
+            if (Estado == "Encendida")
             {
                 if (ensamblaje.Memoria < 25000)
                 {
@@ -31,37 +28,13 @@ namespace Lab4_poo_camila
                 {
                     Console.WriteLine(" ");
                     Console.WriteLine("Error Ensamblaje");
-                    ensamblaje.Reiniciar();
+                   
                 }
 
             }
-        }
-        public void Encender()
-        {
-            Console.WriteLine("Maquina Ensamblaje Encendida");
-            EstadoMaquinaEnsamblaje = "Encendida";
-            Memoria = 0;
+        
         }
 
-        public void Apagar()
-        {
-            Console.WriteLine("Maquina Ensamblaje Apagada");
-            EstadoMaquinaEnsamblaje = "Apagada";
-
-        }
-
-        public void Reiniciar()
-        {
-            if (Memoria == 25000)
-            {
-                EstadoMaquinaEnsamblaje = "Encendida";
-                Memoria = 0;
-                Console.WriteLine("Maquina Ensamblaje Reiniciada");
-            }
-            else
-            {
-                Console.WriteLine(" ");
-            }
-        }
+        
     }
 }
