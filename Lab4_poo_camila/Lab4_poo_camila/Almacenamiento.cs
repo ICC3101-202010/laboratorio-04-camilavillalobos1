@@ -23,10 +23,17 @@ namespace Lab4_poo_camila
                     almacenamiento.Memoria += almacenamiento.PiezasAlmacenadas;
                     
                     Console.WriteLine(" ");
-                    Console.WriteLine("Piezas recibidas en almacenamiento " + PiezasRecibidas);
-                    Console.WriteLine("Piezas que se almacenaron " + PiezasAlmacenadas);
-                    Console.WriteLine("Piezas que se van a ensamblaje " + Piezas_Ensamblaje);
+                    Console.WriteLine("Memoria: " + Memoria);
+                    Console.WriteLine("Piezas recibidas en almacenamiento: " + PiezasRecibidas);
+                    Console.WriteLine("Piezas que se almacenaron: " + PiezasAlmacenadas);
+                    Console.WriteLine("Piezas que se van a ensamblaje: " + Piezas_Ensamblaje);
 
+                }
+                else
+                {
+                    Console.WriteLine(" ");
+                    Console.WriteLine("Error Almacenamiento");
+                    almacenamiento.Reiniciar();
                 }
             }
 
@@ -49,9 +56,10 @@ namespace Lab4_poo_camila
         {
             if (Memoria == 50000)
             {
-                Memoria = 0;
+                
                 EstadoMaquinaAlmacenamiento = "Encendida";
-                Console.WriteLine("Maquina Reiniciada");
+                Memoria = 0;
+                Console.WriteLine("Maquina Almacenamiento Reiniciada");
 
 
             }

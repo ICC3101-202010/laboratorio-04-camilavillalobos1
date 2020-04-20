@@ -12,14 +12,21 @@ namespace Lab4_poo_camila
         {
             if (EstadoMaquinaEmpaque == "Encendida")
             {
-                if (empaque.Memoria < 10000)
+                if (empaque.Memoria < 100000)
                 {
                     empaque.PiezasEmpaquetadas = empaque.PiezasVerificadas;
                     empaque.Memoria += empaque.PiezasEmpaquetadas;
                     Console.WriteLine(" ");
-                    Console.WriteLine(PiezasVerificadas);
+                    Console.WriteLine("Memoria: " + Memoria);
+                    Console.WriteLine("Piezas recibidas verificadas: " + PiezasVerificadas);
                     Console.WriteLine("Piezas empaquetadas: " + PiezasEmpaquetadas);
 
+                }
+                else
+                {
+                    Console.WriteLine(" ");
+                    Console.WriteLine("Error Empaque");
+                    empaque.Reiniciar();
                 }
             }
         }
@@ -38,11 +45,11 @@ namespace Lab4_poo_camila
 
         public void Reiniciar()
         {
-            if (Memoria == 10000)
+            if (Memoria == 100000)
             {
                 EstadoMaquinaEmpaque = "Encendida";
                 Memoria = 0;
-                Console.WriteLine("Maquina Reiniciada");
+                Console.WriteLine("Maquina Empaque Reiniciada");
             }
             else
             {

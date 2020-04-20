@@ -22,13 +22,21 @@ namespace Lab4_poo_camila
                     piezasRecibidas -= recepcion.piezas_almacenamiento;
                     recepcion.Memoria += recepcion.piezas_almacenamiento;
                     Console.WriteLine(" ");
+                    Console.WriteLine("Memoria: " + Memoria);
                     Console.WriteLine("Piezas recibidas: " + piezasRecibidas);
                     Console.WriteLine("Piezas que se van al almacenamiento: " + piezas_almacenamiento);
+                }
+                else
+                {
+                    Console.WriteLine("Error Recepcion");
+                    recepcion.Reiniciar();
                 }
 
             }
             else
             {
+                Console.WriteLine(" ");
+
                 Console.WriteLine("No funciona");
             }
         }
@@ -53,7 +61,7 @@ namespace Lab4_poo_camila
             {
                 EstadoMaquinaRecepcion = "Encendida";
                 Memoria = 0;
-                Console.WriteLine("Maquina Reiniciada");
+                Console.WriteLine("Maquina Recepcion Reiniciada");
             }
             else
             {

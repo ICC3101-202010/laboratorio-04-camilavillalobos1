@@ -5,7 +5,7 @@ namespace Lab4_poo_camila
     class Program
 
     {
-        private static int i;
+        
 
         public static void Main(string[] args)
         {
@@ -18,13 +18,13 @@ namespace Lab4_poo_camila
             Empaque empaque1 = new Empaque();
 
 
-            int x = 0;
 
-            while (x<24)
+
+            for (int x = 0; x <= 24;  x+=1 )
             {
-                x+=1;
+                
 
-                if (x >= 6)
+                if ( x >= 6)
                 {
                     Console.WriteLine("Hora: " + x);
                     recepcion1.Encender();
@@ -45,6 +45,7 @@ namespace Lab4_poo_camila
                     empaque1.PiezasVerificadas = verificacion1.Piezas_Empaque;
                     empaque1.Empaquetado(empaque1);
 
+                    Console.WriteLine("Revisando maquinas ...");
                     recepcion1.Reiniciar();
                     almacenamiento1.Reiniciar();
                     ensamblaje1.Reiniciar();

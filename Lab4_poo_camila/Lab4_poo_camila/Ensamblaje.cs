@@ -22,9 +22,16 @@ namespace Lab4_poo_camila
                     ensamblaje.PiezasEnsambladas += ensamblaje.Piezas_Verificacion;
 
                     Console.WriteLine(" ");
-                    Console.WriteLine(PiezasAlmacenadas);
+                    Console.WriteLine("Memoria: " + Memoria);
+                    Console.WriteLine("Piezas recibidas de almacenamiento: " + PiezasAlmacenadas);
                     Console.WriteLine("Piezas ensambladas: " + PiezasEnsambladas);
                     Console.WriteLine("Piezas que se van a verificacion: " + Piezas_Verificacion);
+                }
+                else
+                {
+                    Console.WriteLine(" ");
+                    Console.WriteLine("Error Ensamblaje");
+                    ensamblaje.Reiniciar();
                 }
 
             }
@@ -49,7 +56,7 @@ namespace Lab4_poo_camila
             {
                 EstadoMaquinaEnsamblaje = "Encendida";
                 Memoria = 0;
-                Console.WriteLine("Maquina Reiniciada");
+                Console.WriteLine("Maquina Ensamblaje Reiniciada");
             }
             else
             {
