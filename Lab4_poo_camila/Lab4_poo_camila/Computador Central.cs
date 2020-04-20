@@ -7,10 +7,7 @@ namespace Lab4_poo_camila
         public int Memoria;
         public string Estado;
         public string Nombre;
-
-        public Computador_Central()
-        {
-        }
+        private int reinicio;
 
         public void Encender()
         {
@@ -25,18 +22,26 @@ namespace Lab4_poo_camila
             return "Maquina Apagada";
         }
 
-        public string Reiniciar()
+        public void Reiniciar(string maquina)
         {
-            if (Estado == "Encendida")
+            if (Estado == "Encendida" && Memoria == 100000)
             {
                 Memoria = 0;
                 //Console.WriteLine("Maquina Reiniciada");
-                return "Maquina Reiniciada";
+                Console.WriteLine("Maquina " + maquina +" Reiniciada"); 
             }
             else
             {
-                return "";
+                Console.WriteLine("  "); 
             }
+
+        }
+
+        public void Reinicio_Manual(string maquina)
+        {
+
+            Memoria = 0;
+            Console.WriteLine("Maquina " + maquina + " Reiniciada");
 
         }
     }

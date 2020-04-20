@@ -13,7 +13,7 @@ namespace Lab4_poo_camila
         {
             if (Estado == "Encendida")
             {
-                if (almacenamiento.Memoria < 50000)
+                if (almacenamiento.Memoria < 100000)
                 {
                     almacenamiento.PiezasAlmacenadas = almacenamiento.PiezasRecibidas / 3;
                     almacenamiento.PiezasAlmacenadas += almacenamiento.Piezas_Ensamblaje;

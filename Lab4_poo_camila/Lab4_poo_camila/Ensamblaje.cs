@@ -11,7 +11,7 @@ namespace Lab4_poo_camila
         {
             if (Estado == "Encendida")
             {
-                if (ensamblaje.Memoria < 25000)
+                if (ensamblaje.Memoria < 100000)
                 {
                     ensamblaje.PiezasEnsambladas = ensamblaje.PiezasAlmacenadas / 2;
                     ensamblaje.Piezas_Verificacion = ensamblaje.PiezasEnsambladas;
